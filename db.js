@@ -24,7 +24,7 @@ function update(id, cliente, callback) {
 }
 
 // função para deletar cliente específico
-function deleteOne(id, cliente, callback) {
+function deleteOne(id, callback) {
     global.conn.collection('clientes').deleteOne({_id: new ObjectId(id)}, callback);
 }
 

@@ -49,11 +49,11 @@ router.post('/edit/:id', (req, res) => {
 });
 
 // DELETANDO UM CLIENTE
-router.post('/delete/:id', (req,res) => {
+router.get('/delete/:id', (req,res) => {
   let id = req.params.id;
-  global.db.deleteOne(id, (e,r) => {
+  global.db.deleteOne(id, (e,result) => {
     if(e) {return console.log(e);}
-    res.redirect('/');
+        res.redirect('/');
   });
 });
 
