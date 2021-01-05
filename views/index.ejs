@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="pt-br">
+  <head>  
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <h1><%= title %></h1>
-    <ul>
-      <% docs.forEach(function(customer){ %>
-      <li>
-          <%= customer.nome %>
-      </li>
-      <% }) %>
-     </ul>   
+    <div class='card'>
+      <ol>
+        <% docs.forEach((cliente) => { %>
+        <li>
+            <a href='/edit/<%=cliente._id%>'><%= cliente.nome %></a>,
+            <%= cliente.idade %>
+            anos, 
+            <%= cliente.profissão %>
+            <a href="/delete <%=cliente._id%>" style="text-decoration:none"  onclick = "return confirm('Tem certeza que deseja excluir este cliente?')">X</a>
+        </li>
+        <% }) %>
+      </ol> 
+    </div>    
+    <button type='button'><a href="/novo" style="text-decoration: none">NOVO CLIENTE</a></button>
   </body>
 </html>
