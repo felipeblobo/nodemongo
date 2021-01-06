@@ -1,2 +1,2 @@
 # nodemongo
-Projeto de CRUD com NodeJs (Express) e MongoDb (Nuvem). 
+Projeto de cadastramento de clientes (CRUD) com NodeJs (Express) e MongoDb (Nuvem). 
