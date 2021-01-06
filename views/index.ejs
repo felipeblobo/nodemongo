@@ -20,7 +20,19 @@
         </li>
         <% }) %>
       </ol> 
-    </div>    
+    </div>
+    <p><%= count %> clientes encontrados!</p>
+    <p>      
+      <%
+        for (let i= 1; i <= qtdPaginas; i++) {
+            if(i !== pagina){
+          %>
+            <a href='/<%= i %>'><%= i %></a> |
+            <%} else {%>
+            <%= i %> |
+        <% } }      
+      %>     
+    </p>
     <button type='button'><a href="/novo" style="text-decoration: none">NOVO CLIENTE</a></button>
   </body>
 </html>

@@ -8,6 +8,10 @@ body {
   align-items: center;
 }
 
+h1{
+  color: #495d5e;
+}
+
 .card {
   background-color: #b0c3c4;
   width: 30%;
@@ -21,8 +25,22 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+
 button {
   width: 15%;
+}
+
+button:hover {
+  background-color: #45414f;
+  transition: 0.7s;
+  opacity: 0.8;
+}
+
+#inputButton:hover{
+  background-color: #45414f;
+  transition: 0.7s;
+  opacity: 0.8;
 }
 
 button,
@@ -33,12 +51,18 @@ button,
   border-radius: 0.5rem;
 }
 
-a,
-#inputButton {
+
+a, #inputButton {
   color: #4d8184;
   font-weight: 700;
   cursor: pointer;
   width: 60%;
+ 
+}
+
+#inputButton {
+  margin-top: 1rem;
+  margin-left: 3rem;
 }
 
 li {
