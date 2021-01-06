@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <title><%= title %></title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
+<%- include('top.ejs') %>
     <form action="<%= action %>" method='POST'>
         <p>Nome: <input type="text" name='nome' value="<%= doc.nome %>"/></p>
         <p>Idade: <input type="number" name='idade' value="<%= doc.idade %>"/></p>
         <p>Profissão: <input size='16.8' type="text" name='profissão' value="<%= doc.profissão %>"/></p>
         <input id = 'inputButton' type="submit" value='SALVAR'>
     </form>
-  </body>
-</html>
+<%- include('bottom.ejs') %>

@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>  
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <h1><%= title %></h1>
+<%- include('top.ejs') %>
     <div class='card'>
       <ol>
         <% docs.forEach((cliente) => { %>
@@ -34,5 +25,4 @@
       %>     
     </p>
     <button type='button'><a href="/novo" style="text-decoration: none">NOVO CLIENTE</a></button>
-  </body>
-</html>
+<%- include('bottom.ejs') %>

@@ -71,5 +71,4 @@ router.get("/:pagina?", async (req, res) => {
       res.render("index", { title: "Lista de Clientes", docs, count, qtdPaginas, pagina });
   });
 
-
 module.exports = router;
