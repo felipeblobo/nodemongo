@@ -1,28 +1,49 @@
 <%- include('top.ejs') %>
-    <div class='card'>
-      <ol>
-        <% docs.forEach((cliente) => { %>
-        <li>
-            <a href='/edit/<%=cliente._id%>'><%= cliente.nome %></a>,
-            <%= cliente.idade %>
-            anos, 
-            <%= cliente.profissão %>
-            <a href="/delete/<%=cliente._id%>" style="text-decoration:none"  onclick = "return confirm('Tem certeza que deseja excluir este cliente?')">X</a>
-        </li>
-        <% }) %>
-      </ol> 
-    </div>
-    <p><%= count %> clientes encontrados!</p>
-    <p>      
-      <%
-        for (let i= 1; i <= qtdPaginas; i++) {
-            if(i !== pagina){
-          %>
-            <a href='/<%= i %>'><%= i %></a> |
-            <%} else {%>
-            <%= i %> |
-        <% } }      
-      %>     
-    </p>
-    <button type='button'><a href="/novo" style="text-decoration: none">NOVO CLIENTE</a></button>
+
+<table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Idade</th>
+          <th scope="col">Profissão</th>          
+          <th scope="col">Excluir</th>
+        </tr>
+    </thead>
+    <tbody>
+  <% docs.forEach(function(cliente){ %>
+    <tr>
+      <td>
+      <a href="/edit/<%= cliente._id %>">
+        <%= cliente.nome %>
+      </a>
+      </td>
+      <td>
+        <%= cliente.idade %>
+      </td>
+      <td>
+        <%= cliente.profissão %>
+      </td>
+      <td>
+      <a href="/delete/<%= cliente._id %>" class="btn btn-danger" 
+        onclick="return confirm('Tem certeza que deseja excluir?');">
+        X
+      </a>
+      </td>
+    </tr>
+  <% }) %>
+  </tbody>
+</table>
+<p><%= count %> clientes encontrados!</p>
+
+<nav aria-label="Paginação">
+  <ul class="pagination">
+    <%
+      for(let i=1; i <= qtdPaginas; i++) {
+        %>
+          <li class="page-item"><a class="page-link" href="/<%= i %>"><%= i %></a></li>
+    <% }%>
+  </ul>
+</nav>
+
+<a href="/novo" class= "btn btn-primary">NOVO CLIENTE</a>
 <%- include('bottom.ejs') %>

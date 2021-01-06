@@ -1,8 +1,19 @@
 <%- include('top.ejs') %>
-    <form action="<%= action %>" method='POST'>
-        <p>Nome: <input type="text" name='nome' value="<%= doc.nome %>"/></p>
-        <p>Idade: <input type="number" name='idade' value="<%= doc.idade %>"/></p>
-        <p>Profissão: <input size='16.8' type="text" name='profissão' value="<%= doc.profissão %>"/></p>
-        <input id = 'inputButton' type="submit" value='SALVAR'>
-    </form>
+<form action="<%= action %>" method="POST">
+    <div class="form-group">
+        <label class ='mb-1' for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome" value="<%= doc.nome %>" />
+    </div>
+    <div class="form-group">
+        <label class ='mb-1 mt-3' for="idade">Idade</label>
+        <input type="number" class="form-control" id="idade" name="idade" placeholder="Digite a idade" value="<%= doc.idade %>" />
+    </div>
+    <div class="form-group">
+        <label class ='mb-1 mt-3' for="nome">Profissão</label>
+        <input type="text" class="form-control" id="profissão" name="profissão" placeholder="Digite a profissão" value="<%= doc.profissão %>" />
+    </div>
+    <input type="submit" value="Salvar" class="btn btn-primary"/><a href="/" class="m-3 btn btn-outline-danger">Cancelar</a>
+</form>
 <%- include('bottom.ejs') %>
+
+

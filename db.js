@@ -6,7 +6,7 @@ mongoClient
 
 var ObjectId = require("mongodb").ObjectId;
 
-const tamanhoPagina = 10;
+const tamanhoPagina = 5;
 
 // função para inserir um registro de cliente
 function insertOne(cliente, callback) {
