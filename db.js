@@ -1,6 +1,6 @@
 const mongoClient = require("mongodb").MongoClient;
 mongoClient
-  .connect("mongodb://localhost", { useUnifiedTopology: true })
+  .connect("mongodb+srv://mongonode:uPYi0AOgagf4BKOu@cluster0.tkmur.mongodb.net/<mongonode>?retryWrites=true&w=majority", { useUnifiedTopology: true })
   .then((conn) => (global.conn = conn.db("nodemongo")))
   .catch((err) => console.log(err));
 

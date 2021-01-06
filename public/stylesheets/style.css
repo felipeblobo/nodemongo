@@ -6,3 +6,18 @@ body {
 a {
   color: #00B7FF;
 }
+
+#novoCliente {
+  width: 10rem;
+}
+
+.botao {
+  width: 7rem;
+  height: 2.5rem;
+
+}
+
+.editExclui {
+  width: 4rem;
+
+}
