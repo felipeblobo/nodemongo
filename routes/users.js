@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var userSchema = require("../models/userSchema")
+const express = require('express');
+const router = express.Router();
+const userSchema = require("../models/userSchema")
 
-const validation = (request, response, next) => {
-  const { error } = userSchema.validate(request.body)
+const validation = (req, res, next) => {
+  const { error } = userSchema.validate(req.body)
   const valid = error == null;
 
   if (valid) {
@@ -13,16 +13,16 @@ const validation = (request, response, next) => {
     const message = details.map(i => i.message).join(',');
 
     console.log("error", message);
-    response.status(422).json({ error: message})
+    res.status(422).json({ error: message})
   }
 }
 
-router.get('/', function(req, res, next) {
+router.get('/novo', function(req, res, next) {
   res.json([]);
 });
 
-router.post('/', validation, (request, response) => {
-  response.status(201).json(request.body);
+router.post('/novo', validation, (req, res) => {
+  res.status(201).json(req.body);
 })
 
 // /* GET users listing. */

@@ -1,7 +1,7 @@
-var express = require("express");
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-// CREATE clientes
+//pg CREATE clientes
 router.get("/novo", (req, res, next) => {
   res.render("novo", {
     title: "Novo Cadastro de Cliente",
@@ -10,6 +10,7 @@ router.get("/novo", (req, res, next) => {
   });
 });
 
+// INSERINDO CLIENTES
 router.post("/novo", (req, res) => {
   let nome = req.body.nome;
   let idade = parseInt(req.body.idade);
@@ -62,7 +63,7 @@ router.get("/delete/:id", (req, res) => {
   });
 });
 
-// READ ALL clientes
+// READ ALL CLIENTES
 router.get("/:pagina?", async (req, res) => {
   const pagina = parseInt(req.params.pagina || '1');
   const docs = await global.db.findAll(pagina);
