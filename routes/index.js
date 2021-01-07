@@ -21,7 +21,7 @@ const validation = (request, response, next) => {
 router.get("/novo", (req, res, next) => {
   res.render("novo", {
     title: "Novo Cadastro de Cliente",
-    doc: { nome: "", idade: "", profissão: "" },
+    doc: { nome: "", idade: "", profissão: "", email:"" },
     action: "/novo",
   });
 });
@@ -31,7 +31,8 @@ router.post("/novo", validation, (req, res) => {
   let nome = req.body.nome;
   let idade = parseInt(req.body.idade);
   let profissão = req.body.profissão;
-  global.db.insertOne({ nome, idade, profissão }, (err, result) => {
+  let email = req.body.email;
+  global.db.insertOne({ nome, idade, profissão, email }, (err, result) => {
     if (err) {
       return console.log(err);
     }
@@ -70,7 +71,7 @@ router.post("/edit/:id", validation, (req, res) => {
 
 // DELETANDO UM CLIENTE
 router.get("/delete/:id", (req, res) => {
-  let id = req.params.id;
+  let id = req.params.id;0,
   global.db.deleteOne(id, (e, result) => {
     if (e) {
       return console.log(e);

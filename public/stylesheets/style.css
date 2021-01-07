@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 5rem;
   font: 1rem "Lora", Helvetica, Arial, sans-serif;
 }
 
@@ -17,7 +17,3 @@ a {
 
 }
 
-.editExclui {
-  width: 4rem;
-
-}

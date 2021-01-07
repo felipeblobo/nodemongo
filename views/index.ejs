@@ -3,11 +3,12 @@
 <table class="table table-bordered table-hover text-center align-middle">
     <thead class="thead-dark">
         <tr class="table-info">
-          <th scope="col">Nome</th>
-          <th scope="col">Idade</th>
-          <th scope="col">Profissão</th>
-          <th scope="col" class="editExclui">Editar</th>          
-          <th scope="col" class="editExclui">Excluir</th>
+          <th scope="col" style="width: 15%">Nome</th>
+          <th scope="col" style="width: 7%">Idade</th>
+          <th scope="col" style="width: 10%">Profissão</th>
+          <th scope="col" style="width: 30%">Email</th>
+          <th scope="col" style="width: 7%" class="editExclui">Editar</th>          
+          <th scope="col" style="width: 7%" class="editExclui">Excluir</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,9 @@
       </td>
       <td>
         <%= cliente.profissão %>
+      </td>
+      <td>
+        <%= cliente.email %>
       </td>
       <td>
         <a href="/edit/<%= cliente._id %>">

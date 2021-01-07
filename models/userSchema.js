@@ -5,5 +5,7 @@ module.exports = Joi.object({
 
     idade: Joi.number().integer().required(),
 
-    profissão: Joi.string().alphanum().required(),
+    profissão: Joi.string().required(),
+
+    email: Joi.string().email(),
 });
