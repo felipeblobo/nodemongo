@@ -1,11 +1,9 @@
-const Joi = require("joi");
+const Joi = require('joi');
 
-const userSchema = Joi.object({
+module.exports = Joi.object({
     nome: Joi.string().alphanum().min(3).max(30).required(),
 
-    idade: Joi.number().integer().min(14).max(110).required(),
+    idade: Joi.number().integer().required(),
 
     profissão: Joi.string().alphanum().required(),
 });
-
-module.exports = { userSchema }

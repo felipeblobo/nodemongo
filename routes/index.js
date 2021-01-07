@@ -2,20 +2,19 @@ const express = require('express');
 const router = express.Router();
 const userSchema = require("../models/userSchema")
 
-// VALIDAÇÃO 
-const validation = (req, res, next) => {
-  const { error } = userSchema.validate(req.body)
-  const valid = error == null;
-
-  if (valid) {
-    next();
-  } else {
-    const { details } = error;
+const validation = (request, response, next) => {
+  const { error } = userSchema.validate(request.body)
+  const valid = error == null; 
+ 
+  if (valid) { 
+    next(); 
+  } else { 
+    const { details } = error; 
     const message = details.map(i => i.message).join(',');
-
-    console.log("error", message);
-    res.status(422).json({ error: message})
-  }
+ 
+    console.log("error", message); 
+    response.status(422).json({ error: message })
+  } 
 }
 
 //pg CREATE clientes
