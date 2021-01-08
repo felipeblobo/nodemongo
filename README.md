@@ -4,7 +4,7 @@
 
 ## Frontend
 
-O frontend é renderizado com a Engine View EJS do Express.
+O frontend é renderizado com a Engine View EJS do Express. Utilizei Bootstrap no processo.
 
 ## Backend / Server
 
