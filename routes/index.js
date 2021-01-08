@@ -61,7 +61,8 @@ router.post("/edit/:id", validation, (req, res) => {
   let nome = req.body.nome;
   let idade = parseInt(req.body.idade);
   let profissão = req.body.profissão;
-  global.db.update(id, { nome, idade, profissão }, (e, result) => {
+  let email = req.body.email;
+  global.db.update(id, { nome, idade, profissão, email }, (e, result) => {
     if (e) {
       return console.log(e);
     }
