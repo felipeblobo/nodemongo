@@ -1,7 +1,9 @@
 const mongoClient = require("mongodb").MongoClient;
+require('dotenv').config();
+console.log()
 mongoClient
-  .connect("mongodb+srv://mongonode:uPYi0AOgagf4BKOu@cluster0.tkmur.mongodb.net/<mongonode>?retryWrites=true&w=majority", { useUnifiedTopology: true })
-  .then((conn) => (global.conn = conn.db("nodemongo")))
+  .connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.tkmur.mongodb.net/<mongonode>?retryWrites=true&w=majority`, { useUnifiedTopology: true })
+  .then((conn) => (global.conn = conn.db(process.env.DB_NAME)))
   .catch((err) => console.log(err));
 
 var ObjectId = require("mongodb").ObjectId;
