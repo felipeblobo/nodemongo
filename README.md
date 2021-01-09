@@ -1,6 +1,11 @@
 # nodemongo
 > Projeto de cadastramento de clientes (CRUD) com NodeJs (Express) e MongoDb (Nuvem). 
 
+
+## Frontend
+
+O frontend é renderizado com a Engine View EJS do Express. Utilizei Bootstrap no processo.
+
 ## Backend / Server
 
 Requisitos para executar o backend:
